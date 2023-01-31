@@ -19,7 +19,12 @@ function getComputerChoice() {
 
 }
 
+// Sets the player's selection to a default choice.
+
 var playerSelection = "scissORS";
+
+// Calls the computer selection function, which returns r, p, or s in the variable computerChoice.
+
 var computerSelection = getComputerChoice();
 
 // This function plays a round of RPS.
