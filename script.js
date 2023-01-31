@@ -4,13 +4,53 @@
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * (3 - 0) ) + 0;
 
+
+
     if (computerChoice == 0) {
-        return "R";
+        computerChoice = "rock";
+        return computerChoice;
     } else if (computerChoice == 1) {
-        return "P";
+        computerChoice = "paper";
+        return computerChoice;
     } else {
-        return "S";
+        computerChoice = "scissors";
+        return computerChoice;
     }
 
 }
 
+var playerSelection = "scissORS";
+var computerSelection = getComputerChoice();
+
+// This function plays a round of RPS.
+
+function playRPS(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+
+    console.log(`Player chose ${playerSelection} and computer chose ${computerSelection}.`);
+
+
+    result = playerSelection + computerSelection;
+
+    console.log(result);
+
+    switch (result) {
+        case 'rockrock':
+        case 'scissorsscissors':
+        case 'paperpaper':
+            console.log(`It's a tie because we both chose ${playerSelection}.`);
+            break;
+        case 'paperrock':
+        case 'scissorspaper':
+        case 'rockscissors':
+            console.log(`You win because ${playerSelection} beats ${computerSelection}!`);
+            break;
+        default:
+            console.log(`I win because ${computerSelection} beats ${playerSelection}!`);
+            break;
+
+    }
+
+}
+
+console.log(playRPS(playerSelection, computerSelection));
