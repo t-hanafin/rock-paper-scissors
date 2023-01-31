@@ -21,41 +21,77 @@ function getComputerChoice() {
 
 // Sets the player's selection to a default choice.
 
-var playerSelection = "scissORS";
 
-// Calls the computer selection function, which returns r, p, or s in the variable computerChoice.
-
-var computerSelection = getComputerChoice();
 
 // This function plays a round of RPS.
 
-function playRPS(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-
-    console.log(`Player chose ${playerSelection} and computer chose ${computerSelection}.`);
-
 
     result = playerSelection + computerSelection;
 
-    console.log(result);
+    winner = undefined;
 
     switch (result) {
         case 'rockrock':
         case 'scissorsscissors':
         case 'paperpaper':
-            console.log(`It's a tie because we both chose ${playerSelection}.`);
+            winner = 0;
+            return(`It's a tie because we both chose ${playerSelection}.`);
             break;
         case 'paperrock':
         case 'scissorspaper':
         case 'rockscissors':
-            console.log(`You win because ${playerSelection} beats ${computerSelection}!`);
+            winner = 1;
+            return(`You win because ${playerSelection} beats ${computerSelection}!`);
             break;
         default:
-            console.log(`I win because ${computerSelection} beats ${playerSelection}!`);
+            winner = 2;
+            return(`I win because ${computerSelection} beats ${playerSelection}!`);
             break;
-
     }
+}
+
+function game() {
+
+    playerWins = 0;
+    computerWins = 0;
+    ties = 0;
+
+    for (let i = 0; i < 5; i++) {
+
+        var computerSelection = getComputerChoice();
+
+        var playerSelection = prompt("rock paper scissors MATCH! ");
+
+        playRound(playerSelection, computerSelection);
+
+        console.log(winner);
+
+        if (winner == 1) {
+            playerWins += 1;
+            alert(`You win, ${playerSelection} beats ${computerSelection}! The score is now ${playerWins} for you and ${computerWins} for me.`);
+        } else if (winner == 2) {
+            computerWins += 1;
+            alert(`I win, ${computerSelection} beats ${playerSelection}! The score is now ${playerWins} for you and ${computerWins} for me.`);
+        } else if (winner == 0) {
+            alert(`We both chose ${playerSelection}. The score is now ${playerWins} for you and ${computerWins} for me.`);
+            ties += 1;
+        }
+
+        
+    }
+
+    if (computerWins > playerWins) {
+        console.log(`Final result: I won, ${computerWins} games to ${playerWins}.`);
+    } else if (computerWins < playerWins) {
+        console.log(`Final result: you won, ${playerWins} games to ${computerWins}.`);
+    } else {
+        console.log(`Final result: it's a ${playerWins} - ${computerWins} tie.`);
+    }
+
 
 }
 
-console.log(playRPS(playerSelection, computerSelection));
+
+console.log(game());
