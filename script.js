@@ -48,32 +48,37 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+//
+
+function getPlayerChoice() {
+
+    var playerChoice = prompt("rock paper scissors MATCH! ", "rock");
+    
+    return playerChoice.toLowerCase();
+    
+}
+
+// This function plays a first-to-five round of rock, paper, scissors.
+
 function game() {
 
-    let wins = 0;
     let playerWins = 0;
     let computerWins = 0;
 
-    while (playerWins < 3 && computerWins < 3) {
+    while (playerWins < 5 && computerWins < 5) {
 
         var computerSelection = getComputerChoice();
     
-        var playerSelection = prompt("rock paper scissors MATCH! ", "rock");
-    
-        playerSelection = playerSelection.toLowerCase();
-    
+        var playerSelection = getPlayerChoice();
+
         playRound(playerSelection, computerSelection);
-    
-        console.log(winner);
-    
+        
         if (winner == 1) {
-            wins += 1;
             playerWins += 1;
-            alert(`You win, ${playerSelection} beats ${computerSelection}! The score is now ${playerWins} for you and ${computerWins} for me.`);
+            alert(`Your ${playerSelection} beats my ${computerSelection}! The score is now ${playerWins} for you and ${computerWins} for me.`);
         } else if (winner == 2) {
-            wins += 1;
             computerWins += 1;
-            alert(`I win, ${computerSelection} beats ${playerSelection}! The score is now ${playerWins} for you and ${computerWins} for me.`);
+            alert(`My ${computerSelection} beats your ${playerSelection}! The score is now ${playerWins} for you and ${computerWins} for me.`);
         } else if (winner == 0) {
             alert(`We both chose ${playerSelection}. The score is still ${playerWins} for you and ${computerWins} for me.`);
         }
@@ -81,13 +86,12 @@ function game() {
     }
 
     if (computerWins > playerWins) {
-        console.log(`Final result: I won, ${computerWins} games to ${playerWins}.`);
+        alert(`Final result: I won, ${computerWins} games to ${playerWins}.`);
     } else if (computerWins < playerWins) {
-        console.log(`Final result: you won, ${playerWins} games to ${computerWins}.`);
+        alert(`Final result: you won, ${playerWins} games to ${computerWins}.`);
     }
-
 
 }
 
 
-console.log(game());
+game();
