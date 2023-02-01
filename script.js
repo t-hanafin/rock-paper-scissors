@@ -75,12 +75,27 @@ function game() {
         
         if (winner == 1) {
             playerWins += 1;
-            alert(`Your ${playerSelection} beats my ${computerSelection}! The score is now ${playerWins} for you and ${computerWins} for me.`);
         } else if (winner == 2) {
             computerWins += 1;
-            alert(`My ${computerSelection} beats your ${playerSelection}! The score is now ${playerWins} for you and ${computerWins} for me.`);
         } else if (winner == 0) {
-            alert(`We both chose ${playerSelection}. The score is still ${playerWins} for you and ${computerWins} for me.`);
+        }
+
+        switch (result) {
+            case 'rockpaper':
+            case 'paperrock':
+                alert(`Paper covers rock! The score is now ${playerWins} for you and ${computerWins} for me.`);
+                break;
+            case 'rockscissors':
+            case 'scissorsrock':
+                alert(`Rock smashes scissors! The score is now ${playerWins} for you and ${computerWins} for me.`);
+                break;
+            case 'paperscissors':
+            case 'scissorspaper':
+                alert(`Scissors cut paper! The score is now ${playerWins} for you and ${computerWins} for me.`);
+                break;
+            default:
+                alert(`We both chose ${playerSelection}. The score is still ${playerWins} for you and ${computerWins} for me.`);
+                break;
         }
 
     }
