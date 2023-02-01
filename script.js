@@ -83,15 +83,15 @@ function game() {
         switch (result) {
             case 'rockpaper':
             case 'paperrock':
-                alert(`I chose ${computerSelection} and you chose ${playerSelection}, and paper covers rock! The score is now ${playerWins} for you and ${computerWins} for me.`);
+                alert(`I chose ${computerSelection}, you chose ${playerSelection}, and paper covers rock! The score is now ${playerWins} for you and ${computerWins} for me.`);
                 break;
             case 'rockscissors':
             case 'scissorsrock':
-                alert(`I chose ${computerSelection} and you chose ${playerSelection}, and rock smashes scissors! The score is now ${playerWins} for you and ${computerWins} for me.`);
+                alert(`I chose ${computerSelection}, you chose ${playerSelection}, and rock smashes scissors! The score is now ${playerWins} for you and ${computerWins} for me.`);
                 break;
             case 'paperscissors':
             case 'scissorspaper':
-                alert(`I chose ${computerSelection} and you chose ${playerSelection}, and scissors cut paper! The score is now ${playerWins} for you and ${computerWins} for me.`);
+                alert(`I chose ${computerSelection}, you chose ${playerSelection}, and scissors cut paper! The score is now ${playerWins} for you and ${computerWins} for me.`);
                 break;
             default:
                 alert(`We both chose ${playerSelection}. The score is still ${playerWins} for you and ${computerWins} for me.`);
