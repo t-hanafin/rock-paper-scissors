@@ -1,5 +1,20 @@
 
 
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playRound(button.id, getComputerChoice())
+      });
+    });
+
+
+
+
+
+
+
+
 // This function chooses rock, paper, or scissors at random and assigns that choice to the computer.
 
 function getComputerChoice() {
@@ -33,22 +48,31 @@ function playRound(playerSelection, computerSelection) {
         case 'scissorsscissors':
         case 'paperpaper':
             winner = 0;
-//            return(`It's a tie because we both chose ${playerSelection}.`);
+            alert(`
+                You chose ${playerSelection}.
+                I chose ${computerSelection}. 
+                It's a tie because we both chose ${playerSelection}.`);
             break;
         case 'paperrock':
         case 'scissorspaper':
         case 'rockscissors':
             winner = 1;
-//            return(`You win because ${playerSelection} beats ${computerSelection}!`);
+            alert(`
+                You chose ${playerSelection}.
+                I chose ${computerSelection}. 
+                You win because ${playerSelection} beats ${computerSelection}!`);
             break;
         default:
             winner = 2;
-//            return(`I win because ${computerSelection} beats ${playerSelection}!`);
+            alert(`
+                You chose ${playerSelection}.
+                I chose ${computerSelection}. 
+                I win because ${computerSelection} beats ${playerSelection}!`);
             break;
     }
 }
 
-//
+// This function gets the player's choice of r, p, or s. 
 
 function getPlayerChoice() {
 
@@ -60,12 +84,16 @@ function getPlayerChoice() {
 
 // This function plays a first-to-five round of rock, paper, scissors.
 
+
 function game() {
 
     let playerWins = 0;
     let computerWins = 0;
 
-    while (playerWins < 5 && computerWins < 5) {
+
+
+    while (playerWins < 1 && computerWins < 1) {
+
 
         var computerSelection = getComputerChoice();
     
@@ -98,6 +126,7 @@ function game() {
                 break;
         }
 
+
     }
 
     if (computerWins > playerWins) {
@@ -109,4 +138,4 @@ function game() {
 }
 
 
-game();
+
