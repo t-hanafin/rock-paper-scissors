@@ -1,30 +1,40 @@
+let playerTotal = 0;
+let computerTotal = 0;
 
-
+// This accepts r, p, or s as player input. 
 
 const buttons = document.querySelectorAll('button');
-
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        playRound(button.id, getComputerChoice())
+        if (playerTotal < 5 && computerTotal < 5) {
+            playRound(button.id);
+        } else {
+            playerScore.textContent = "The game is done, reload page to play again.";
+            computerScore.textContent = "";
+        }
       });
     });
 
+// Populates the player's score box.
 
-const container = document.querySelector(".results");
+const results = document.querySelector(".results");
+const playerScore = document.createElement('div');
+playerScore.classList.add('content');
+results.appendChild(playerScore);
 
-const content = document.createElement('div');
-content.classList.add('content');
-    
-container.appendChild(content);
-    
-    
+// Populates the computer's score box. 
 
+const computerScore = document.createElement('div');
+computerScore.classList.add('content');
+results.appendChild(computerScore);
 
+// Populates the final result box.
 
+const finalResult = document.createElement('div');
+finalResult.classList.add('content');
+results.appendChild(finalResult);
 
-
-
-// This function chooses rock, paper, or scissors at random and assigns that choice to the computer.
+// Gets the computer's choice of r, p, or s.
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * (3 - 0) ) + 0;
@@ -39,110 +49,61 @@ function getComputerChoice() {
         computerChoice = "scissors";
         return computerChoice;
     }
-
 }
 
+// Plays a single round of r, p, s.
 
-// This function plays a single round of rock, paper, scissors.
-
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-
-    result = playerSelection + computerSelection;
-
-    winner = undefined;
-
-    switch (result) {
+function playRound(playerSelection) {
+    var computerSelection = getComputerChoice();
+    roundResult = playerSelection + computerSelection;
+    console.log(roundResult);
+    switch (roundResult) {
         case 'rockrock':
         case 'scissorsscissors':
         case 'paperpaper':
-            winner = 0;
-            content.textContent = `You chose ${playerSelection}.
-                I chose ${computerSelection}.
-                It's a tie because we both chose ${playerSelection}.`
+            tallyResults("0"); // It's a tie. Change this and the two below to tallyResults(0)
             break;
         case 'paperrock':
         case 'scissorspaper':
         case 'rockscissors':
-            winner = 1;
-            content.textContent = `You chose ${playerSelection}.
-                I chose ${computerSelection}.
-                You win because ${playerSelection} beats ${computerSelection}!`
+            tallyResults("1"); // Player wins.
             break;
         default:
-            winner = 2;
-            content.textContent = `You chose ${playerSelection}.
-                I chose ${computerSelection}.
-                I win because ${computerSelection} beats ${playerSelection}!`
+            tallyResults("2"); // Computer wins. 
             break;
     }
 }
 
+// Keeps a tally of round-results. 
 
-
-// This function gets the player's choice of r, p, or s. 
-
-function getPlayerChoice() {
-
-    var playerChoice = prompt("rock paper scissors MATCH! ", "rock");
-    
-    return playerChoice.toLowerCase();
-    
+function tallyResults(winner) {
+    console.log(winner);
+    switch (winner) {
+        case "0":
+            displayScore(playerTotal, computerTotal);
+            break;
+        case "2":
+            playerTotal += 1;
+            displayScore(playerTotal, computerTotal);    
+            break;
+        case "1":
+            computerTotal += 1;
+            displayScore(playerTotal, computerTotal);
+            break;
+    }
 }
 
-// This function plays a first-to-five round of rock, paper, scissors.
+// Displays the current score and the final score if the game is finished.
 
-
-function game() {
-
-    let playerWins = 0;
-    let computerWins = 0;
-
-
-
-    while (playerWins < 1 && computerWins < 1) {
-
-
-        var computerSelection = getComputerChoice();
-    
-        var playerSelection = getPlayerChoice();
-
-        playRound(playerSelection, computerSelection);
-        
-        if (winner == 1) {
-            playerWins += 1;
-        } else if (winner == 2) {
-            computerWins += 1;
-        } else if (winner == 0) {
-        }
-
-        switch (result) {
-            case 'rockpaper':
-            case 'paperrock':
-                alert(`I chose ${computerSelection} and you chose ${playerSelection}, and paper covers rock! The score is now ${playerWins} for you and ${computerWins} for me.`);
-                break;
-            case 'rockscissors':
-            case 'scissorsrock':
-                alert(`I chose ${computerSelection} and you chose ${playerSelection}, and rock smashes scissors! The score is now ${playerWins} for you and ${computerWins} for me.`);
-                break;
-            case 'paperscissors':
-            case 'scissorspaper':
-                alert(`I chose ${computerSelection} and you chose ${playerSelection}, and scissors cut paper! The score is now ${playerWins} for you and ${computerWins} for me.`);
-                break;
-            default:
-                alert(`We both chose ${playerSelection}. The score is still ${playerWins} for you and ${computerWins} for me.`);
-                break;
-        }
-
-
+function displayScore(playerTotal, computerTotal) {
+    if (playerTotal < 5 && computerTotal < 5) {
+        playerScore.textContent = `You: ${playerTotal}`;
+        computerScore.textContent = `Me: ${computerTotal}`;
+    } else if (playerTotal > computerTotal) {
+        finalResult.textContent = `You win, ${playerTotal} to ${computerTotal}.`
+    } else if (computerTotal > playerTotal) {
+        finalResult.textContent = `I win, ${computerTotal} to ${playerTotal}.`
     }
-
-    if (computerWins > playerWins) {
-        alert(`Final result: I won, ${computerWins} games to ${playerWins}.`);
-    } else if (computerWins < playerWins) {
-        alert(`Final result: you won, ${playerWins} games to ${computerWins}.`);
-    }
-
 }
 
 

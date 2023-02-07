@@ -9,16 +9,23 @@
   .buttons {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
   }
   
   button {
     display: flex;
     background-color: white;
     border: 1px solid orange;
-    font-size: 30px;
+    font-size: 3vw;
   }
 
   .header {
-    font-size: 40px;
+    font-size: 5vw;
+  }
+
+  .results {
+    display: flex;
+    margin: 0px 20px;
+    font-size: 2vw;
+    gap: 45px;
   }
