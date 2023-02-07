@@ -1,5 +1,6 @@
 
 
+
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
@@ -9,6 +10,14 @@ buttons.forEach((button) => {
     });
 
 
+const container = document.querySelector(".results");
+
+const content = document.createElement('div');
+content.classList.add('content');
+    
+container.appendChild(content);
+    
+    
 
 
 
@@ -48,29 +57,28 @@ function playRound(playerSelection, computerSelection) {
         case 'scissorsscissors':
         case 'paperpaper':
             winner = 0;
-            alert(`
-                You chose ${playerSelection}.
-                I chose ${computerSelection}. 
-                It's a tie because we both chose ${playerSelection}.`);
+            content.textContent = `You chose ${playerSelection}.
+                I chose ${computerSelection}.
+                It's a tie because we both chose ${playerSelection}.`
             break;
         case 'paperrock':
         case 'scissorspaper':
         case 'rockscissors':
             winner = 1;
-            alert(`
-                You chose ${playerSelection}.
-                I chose ${computerSelection}. 
-                You win because ${playerSelection} beats ${computerSelection}!`);
+            content.textContent = `You chose ${playerSelection}.
+                I chose ${computerSelection}.
+                You win because ${playerSelection} beats ${computerSelection}!`
             break;
         default:
             winner = 2;
-            alert(`
-                You chose ${playerSelection}.
-                I chose ${computerSelection}. 
-                I win because ${computerSelection} beats ${playerSelection}!`);
+            content.textContent = `You chose ${playerSelection}.
+                I chose ${computerSelection}.
+                I win because ${computerSelection} beats ${playerSelection}!`
             break;
     }
 }
+
+
 
 // This function gets the player's choice of r, p, or s. 
 
