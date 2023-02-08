@@ -143,7 +143,7 @@ function displayScore(playerTotal, computerTotal, ties) {
               button.disabled = true;
             }    
         } else if (computerTotal > playerTotal) {
-            score.textContent = `here's the final result: I won, ${computerTotal} games to ${playerTotal}.\r\n`;
+            score.textContent = `here's the final result: i won, ${computerTotal} games to ${playerTotal}.\r\n`;
             score.textContent += `there were ${ties} interminable ties.\r\n`;
             score.textContent += `we played ${playerTotal + computerTotal + ties} rounds.\r\n`;
             score.textContent += `reload the page to play again.`;
