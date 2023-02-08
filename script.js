@@ -95,43 +95,43 @@ function displayScore(playerTotal, computerTotal, ties) {
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
                 score.textContent += `we both chose ${playerSelection}.\r\n`;
                 score.textContent += "so it's a tie.\r\n";
-                score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.\r\n`;
+                score.textContent += `you have ${playerTotal} wins, i have ${computerTotal} wins, and there have been ${ties} ties.\r\n`;
                 break;
             case 'paperrock':
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
-                score.textContent += `you chose paper and I chose rock.\r\n`;
+                score.textContent += `you chose paper and i chose rock.\r\n`;
                 score.textContent += `you win because paper covers rock.\r\n`;
-                score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.`;
+                score.textContent += `you have ${playerTotal} wins, i have ${computerTotal} wins, and there have been ${ties} ties.`;
                 break;
             case 'scissorspaper':
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
-                score.textContent += `you chose scissors and I chose paper.\r\n`;
+                score.textContent += `you chose scissors and i chose paper.\r\n`;
                 score.textContent += `you win because scissors cut paper.\r\n`;
-                score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.`;
+                score.textContent += `you have ${playerTotal} wins, i have ${computerTotal} wins, and there have been ${ties} ties.`;
                 break;
             case 'rockscissors':
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
-                score.textContent += `you chose rock and I chose scissors.\r\n`;
+                score.textContent += `you chose rock and i chose scissors.\r\n`;
                 score.textContent += `you win because rock smashes scissors.\r\n`;
-                score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.`;
+                score.textContent += `you have ${playerTotal} wins, i have ${computerTotal} wins, and there have been ${ties} ties.`;
                 break;
             case 'rockpaper':
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
-                score.textContent += `you chose rock and I chose paper.\r\n`;
+                score.textContent += `you chose rock and i chose paper.\r\n`;
                 score.textContent += `i win because paper covers rock.\r\n`;
-                score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.`;
+                score.textContent += `you have ${playerTotal} wins, i have ${computerTotal} wins, and there have been ${ties} ties.`;
                 break;
             case 'paperscissors':
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
-                score.textContent += `you chose paper and I chose scissors.\r\n`;
+                score.textContent += `you chose paper and i chose scissors.\r\n`;
                 score.textContent += `i win because scissors cut paper.\r\n`;
-                score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.`;
+                score.textContent += `you have ${playerTotal} wins, i have ${computerTotal} wins, and there have been ${ties} ties.`;
                 break;
             case 'scissorsrock':
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
-                score.textContent += `you chose scissors and I chose rock.\r\n`;
+                score.textContent += `you chose scissors and i chose rock.\r\n`;
                 score.textContent += `i win because rock smashes scissors.\r\n`;
-                score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.`;
+                score.textContent += `you have ${playerTotal} wins, i have ${computerTotal} wins, and there have been ${ties} ties.`;
                 break;
         } else if (playerTotal > computerTotal) {
             score.textContent = `here's the final result: you won, ${playerTotal} games to ${computerTotal}.\r\n`;
@@ -143,7 +143,7 @@ function displayScore(playerTotal, computerTotal, ties) {
               button.disabled = true;
             }    
         } else if (computerTotal > playerTotal) {
-            score.textContent = `here's the final result: I won, ${computerTotal} games to ${playerTotal}.\r\n`;
+            score.textContent = `here's the final result: i won, ${computerTotal} games to ${playerTotal}.\r\n`;
             score.textContent += `there were ${ties} interminable ties.\r\n`;
             score.textContent += `we played ${playerTotal + computerTotal + ties} rounds.\r\n`;
             score.textContent += `reload the page to play again.`;
