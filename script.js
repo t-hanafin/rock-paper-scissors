@@ -98,7 +98,6 @@ function displayScore(playerTotal, computerTotal, ties) {
                 score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.\r\n`;
                 break;
             case 'paperrock':
-<<<<<<< HEAD
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
                 score.textContent += `you chose paper and I chose rock.\r\n`;
                 score.textContent += `you win because paper covers rock.\r\n`;
@@ -127,17 +126,6 @@ function displayScore(playerTotal, computerTotal, ties) {
                 score.textContent += `you chose paper and I chose scissors.\r\n`;
                 score.textContent += `i win because scissors cut paper.\r\n`;
                 score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.`;
-=======
-                alert(`I chose ${computerSelection}, you chose ${playerSelection}, and paper covers rock! The score is now ${playerWins} for you and ${computerWins} for me.`);
-                break;
-            case 'rockscissors':
-            case 'scissorsrock':
-                alert(`I chose ${computerSelection}, you chose ${playerSelection}, and rock smashes scissors! The score is now ${playerWins} for you and ${computerWins} for me.`);
-                break;
-            case 'paperscissors':
-            case 'scissorspaper':
-                alert(`I chose ${computerSelection}, you chose ${playerSelection}, and scissors cut paper! The score is now ${playerWins} for you and ${computerWins} for me.`);
->>>>>>> 6c30f7f79a4470994cb48afda1f7b5f1a824027f
                 break;
             case 'scissorsrock':
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
@@ -168,9 +156,3 @@ function displayScore(playerTotal, computerTotal, ties) {
 
 
 }
-<<<<<<< HEAD
-=======
-
-
-game();
->>>>>>> 6c30f7f79a4470994cb48afda1f7b5f1a824027f
