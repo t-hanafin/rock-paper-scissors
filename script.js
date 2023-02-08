@@ -94,7 +94,7 @@ function displayScore(playerTotal, computerTotal, ties) {
             case 'paperpaper':
                 score.textContent = `we just played round #${playerTotal + computerTotal + ties}.\r\n`;
                 score.textContent += `we both chose ${playerSelection}.\r\n`;
-                score.textContent += "so it's a tie.\r\n";
+                score.textContent += `so it's a tie.\r\n`;
                 score.textContent += `you have ${playerTotal} wins, I have ${computerTotal} wins, and there have been ${ties} ties.\r\n`;
                 break;
             case 'paperrock':
