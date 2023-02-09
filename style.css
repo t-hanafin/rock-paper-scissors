@@ -3,36 +3,37 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: 3vw 10vw;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 14px;
-    margin: 15px;
-  }
-  
-  button {
-    display: flex;
-    justify-content: center;
-    width: 115px;
-    background-color: lightgrey;
-    border: 1px solid orange;
-    font-size: 26px;
-    padding: 4px;
-  }
-    
-  .text, .displayComputerChoice, .results {
-    display: flex;
-    text-align: left;
-    font-size: 30px;
-    margin: 15px;
-  }
-  
-  .results {
-    gap: 8px;
-    font-size: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  margin: 3vw 15vw;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 14px;
+  margin: 15px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  width: 115px;
+  background-color: rgb(240, 237, 237);
+  border: 1px solid orange;
+  font-size: 1vw;
+  padding: 4px;
+}
+
+.text, .displayComputerChoice, .results {
+  display: flex;
+  text-align: left;
+  font-size: 2vw;
+  margin: 15px;
+}
+
+.results {
+  background-color: rgb(240, 237, 237);
+  gap: 8px;
+  font-size: 2vw;
+}
