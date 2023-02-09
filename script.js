@@ -151,8 +151,5 @@ function displayScore(playerTotal, computerTotal, ties) {
             for (const button of buttons) {
               button.disabled = true;
             }
-    
         }
-
-
 }
